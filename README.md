@@ -14,7 +14,7 @@
     - En macOS/Linux: `source venv/bin/activate`
 5. Instala las dependencias del proyecto: `pip install -r requirements.txt`
 6. Configura la base de datos:
-    - La configuracion de la base de datos se generara cuando se inicie el servicio, sin embargo, antes debemos realizar unas configuraciones
+    - La configuracion de la base de datos se generara cuando se inicie el servicio, ya que se utilizo sqlite, sin embargo, antes debemos realizar unas configuraciones
 7. Crea y realiza las migraciones de la base de datos:
     - `python manage.py migrate`
 

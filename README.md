@@ -3,6 +3,7 @@
 ## Requisitos previos
 - Python 3.10.12 instalado en tu sistema.
 - Pip (administrador de paquetes de Python) instalado.
+- virtualenv o venv para la creacion de entornos
 
 ## Pasos para configurar el proyecto
 1. Clona el repositorio desde GitHub: `git clone https://github.com/ajtp18/prueba-django.git`

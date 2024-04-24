@@ -42,5 +42,5 @@ class UpdateProduct(viewsets.ReadOnlyModelViewSet):
 
 class getProduct(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().order_by('id')
     serializer_class = ProductSerializer

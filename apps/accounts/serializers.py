@@ -10,3 +10,13 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
+    
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField()
+
+    def validate(self, data):
+        user = User.objects.get(username=data['username'])
+        if user.check_password(data['password']):
+            return user
+        raise serializers.ValidationError('Incorrect password')

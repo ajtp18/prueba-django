@@ -1,8 +1,9 @@
-from django.contrib import admin
-from django.urls import path
-from apps.accounts.views import UserCreateAPIView, UserLoginAPIView
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('api/auth/register/', UserCreateAPIView.as_view(), name='user-create'),
-    path('api/auth/login/', UserLoginAPIView.as_view(), name='user-login'),
-]
+    path('api/auth/', include('apps.accounts.urls')),
+    path('api/products/', include('apps.product.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
